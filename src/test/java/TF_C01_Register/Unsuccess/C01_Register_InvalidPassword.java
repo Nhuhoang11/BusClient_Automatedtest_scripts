@@ -1,4 +1,4 @@
-package TestFunc_C01_Register.Unsuccess;
+package TF_C01_Register.Unsuccess;
 
 import Func.C00.LaunchApp;
 import Func.C01.SignUpForm;
@@ -6,8 +6,6 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import org.testng.annotations.*;
 import utils.ElementXPath;
-
-import java.sql.SQLOutput;
 
 public class C01_Register_InvalidPassword {
     AppiumDriver<MobileElement> appiumDriver = null;

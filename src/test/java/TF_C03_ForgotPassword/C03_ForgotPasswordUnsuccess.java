@@ -1,4 +1,4 @@
-package TestFunc_C03_ForgotPassword;
+package TF_C03_ForgotPassword;
 
 import Func.C00.LaunchApp;
 import Func.C01.SignUpForm;
@@ -13,8 +13,6 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import utils.ElementXPath;
 import utils.LaunchGmail;
-
-import java.util.List;
 
 public class C03_ForgotPasswordUnsuccess {
     AppiumDriver<MobileElement> appiumDriver = null;

@@ -1,4 +1,4 @@
-package TestFunc_C00;
+package TF_C00;
 
 import Func.C00.LaunchApp;
 import io.appium.java_client.AppiumDriver;
@@ -8,19 +8,17 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import utils.ElementXPath;
 
-public class C00_SignUpVisible {
+public class C00_LaunchApp {
     @Test
-    public void signUpLinkVisible() {
+    public void launchApp() {
         AppiumDriver<MobileElement> appiumDriver = LaunchApp.getAppiumDriver();
 
+        // Verify
+        MobileElement signInBtn = appiumDriver.findElementByAccessibilityId(ElementXPath.signInBtnId);
         MobileElement signUpBtn = appiumDriver.findElementByAccessibilityId(ElementXPath.signUpTxtId);
         WebDriverWait wait = new WebDriverWait(appiumDriver, 10);
+        wait.until(ExpectedConditions.visibilityOf(signInBtn));
         wait.until(ExpectedConditions.visibilityOf(signUpBtn));
-        signUpBtn.click();
-
-        MobileElement verifyTxt = appiumDriver.findElementByXPath("//android.widget.TextView[contains(@text, 'Already have an account?')]");
-        wait.until(ExpectedConditions.visibilityOf(verifyTxt));
-
-        System.out.println("PASS - Sign up link is visible!");
+        System.out.println("Launching app success!");
     }
 }

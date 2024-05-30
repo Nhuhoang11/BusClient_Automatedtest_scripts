@@ -1,4 +1,4 @@
-package TestFunc_C01_Register.Success;
+package TF_C01_Register.Success;
 
 import Action.ScrollDown90Percent;
 import Func.C00.LaunchApp;

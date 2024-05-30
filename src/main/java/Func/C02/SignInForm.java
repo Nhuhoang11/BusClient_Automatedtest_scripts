@@ -90,6 +90,19 @@ public class SignInForm {
         }
     }
 
+    public boolean isSignInSuccess() {
+        try {
+            MobileElement homeIcon = appiumDriver.findElementByAccessibilityId("Home");
+            wait.until(ExpectedConditions.visibilityOf(homeIcon));
+            if (homeIcon.isDisplayed()) {
+                return true;
+            }
+        } catch (WebDriverException e) {
+            //
+        }
+        return false;
+    }
+
     public boolean isAnyHelperTextDisplayed() {
         try {
             MobileElement emailHelperText = (MobileElement) wait.until(ExpectedConditions.visibilityOf(appiumDriver.findElement(emailHelperTextLocator)));

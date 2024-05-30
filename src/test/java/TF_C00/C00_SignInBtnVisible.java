@@ -1,4 +1,4 @@
-package TestFunc_C00;
+package TF_C00;
 
 import Func.C00.LaunchApp;
 import io.appium.java_client.AppiumDriver;

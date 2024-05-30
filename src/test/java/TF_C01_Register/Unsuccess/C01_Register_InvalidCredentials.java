@@ -1,4 +1,4 @@
-package TestFunc_C01_Register.Unsuccess;
+package TF_C01_Register.Unsuccess;
 
 import Func.C00.LaunchApp;
 import Func.C01.SignUpForm;

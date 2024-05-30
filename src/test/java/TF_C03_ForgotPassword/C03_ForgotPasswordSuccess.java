@@ -1,7 +1,7 @@
-package TestFunc_C03_ForgotPassword;
+package TF_C03_ForgotPassword;
 
 import Func.C00.LaunchApp;
-import Func.C01.SignUpForm;
+import Func.C02.LogoutForm;
 import Func.C02.SignInForm;
 import Func.C03_ForgotPassword.ForgotPasswordForm;
 import io.appium.java_client.AppiumDriver;
@@ -23,6 +23,7 @@ public class C03_ForgotPasswordSuccess {
     private LaunchGmail launchGmail;
     private WebDriverWait wait;
     private ForgotPasswordForm forgotPasswordForm;
+    private LogoutForm logoutForm;
 
     @BeforeClass
     public void setup() {
@@ -32,7 +33,7 @@ public class C03_ForgotPasswordSuccess {
         signInForm.clickSignInButton();
     }
 
-    @Test
+    @Test(priority = 0)
     public void TC001_inputValidCreds() {
         // Click on 'Forgot password'
         MobileElement forgotPassword = appiumDriver.findElementByAccessibilityId(ElementXPath.forgotPasswordId);
@@ -74,7 +75,7 @@ public class C03_ForgotPasswordSuccess {
     }
 
     // Test again
-    @Test
+    @Test(priority = 1)
     public void TC002_resetPasswordAgain() {
         // Click on 'Forgot password'
         MobileElement forgotPassword = appiumDriver.findElementByAccessibilityId(ElementXPath.forgotPasswordId);
@@ -116,6 +117,11 @@ public class C03_ForgotPasswordSuccess {
     }
 
     @AfterMethod
+    public void logout() {
+        logoutForm = new LogoutForm(appiumDriver);
+        logoutForm.logout();
+    }
+
     public void quitGmail() {
         if (launchGmail != null) {
             launchGmail.quitAppInstAdds();

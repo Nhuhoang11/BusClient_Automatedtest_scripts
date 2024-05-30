@@ -1,4 +1,4 @@
-package TestFunc_C02;
+package TF_C02_SignIn;
 
 import Func.C00.LaunchApp;
 import Func.C02.SignInForm;
