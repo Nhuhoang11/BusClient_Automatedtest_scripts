@@ -3,7 +3,7 @@ package utils;
 import Action.ScrollDown50Percent;
 import Action.ScrollDown90Percent;
 import Action.ScrollUp90Percent;
-import DB.GetAllEmailOfTableParent;
+import DB.Parent_GetAllEmail;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
@@ -21,7 +21,7 @@ public class LaunchInstAddr_ComparewithExistingEMail {
     private ScrollDown90Percent scrollDown;
     private ScrollDown50Percent scrollDown50Percent;
     private ScrollUp90Percent scrollUp90Percent;
-    private GetAllEmailOfTableParent getAllEmailOfTableParent;
+    private Parent_GetAllEmail getAllEmailOfTableParent;
 
     public LaunchInstAddr_ComparewithExistingEMail(AppiumDriver<MobileElement> appiumDriver) {
         this.appiumDriver = appiumDriver;
@@ -54,7 +54,7 @@ public class LaunchInstAddr_ComparewithExistingEMail {
         for (MobileElement emailElement : emailList) {
             String email = emailElement.getText();
             System.out.println("Check email in DB...");
-            if (GetAllEmailOfTableParent.isEmailInDatabase(email)) {
+            if (Parent_GetAllEmail.isEmailInDatabase(email)) {
                 System.out.println(email + "is already existing!");
             } else {
                 return email; // Return the first email that is not in the database

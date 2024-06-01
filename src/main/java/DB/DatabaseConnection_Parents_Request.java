@@ -1,4 +1,5 @@
 package DB;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -31,7 +32,11 @@ public class DatabaseConnection_Parents_Request {
     }
 
     public static void getParentAndRequestByEmail(String email) {
-        String query = "SELECT p.*, r.* FROM \"public\".\"Parent\" p JOIN \"public\".\"Request\" r ON p.id = r.parent_id WHERE p.email = ?";
+        String query = "SELECT p.*, r.* " +
+                "FROM \"public\".\"Parent\" p " +
+                "JOIN \"public\".\"Request\" r " +
+                "ON p.id = r.parent_id " +
+                "WHERE p.email = ?";
 
         try (Connection connection = getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(query)) {

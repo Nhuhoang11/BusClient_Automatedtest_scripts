@@ -1,6 +1,6 @@
 package TF_C01_Register.Unsuccess;
 
-import DB.GetTheFirstValueOfTableParent;
+import DB.Parent_GetTheFirstValue;
 import Func.C00.LaunchApp;
 import Func.C01.SignUpForm;
 import io.appium.java_client.AppiumDriver;
@@ -11,7 +11,7 @@ import utils.ElementXPath;
 public class C01_Register_AlreadyExistEmail {
     AppiumDriver<MobileElement> appiumDriver = null;
     private SignUpForm signUpForm;
-    String firstParentEmail = GetTheFirstValueOfTableParent.getFirstParentEmail();
+    String firstParentEmail = Parent_GetTheFirstValue.getFirstParentEmail();
 
     @BeforeClass
     public void setup() {
