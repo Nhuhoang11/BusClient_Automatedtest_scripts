@@ -45,7 +45,7 @@ public class C10_VefifyProfileVisible {
     }
 
     @Test
-    public void TC001() {
+    public void TC001_VerifyProfileDisplay() {
         // Verify avatar
         By avtSel = MobileBy.className("android.widget.ImageView");
         wait.until(ExpectedConditions.visibilityOfElementLocated(avtSel));
@@ -71,7 +71,7 @@ public class C10_VefifyProfileVisible {
     }
 
     @Test
-    public void verifyProfileDataWithDB() {
+    public void TC002_VerifyProfileDataWithDB() {
         try {
             ResultSet resultSet = Parent_GetDataWithEmail.getParentData(checkAccount);
             if (resultSet.next()) {
